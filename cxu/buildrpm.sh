@@ -2,7 +2,7 @@
 
 rpmdev-setuptree
 
-VER=$(../scmrev.sh)
+VER=$(../scmrev)
 FIXVER=$(echo ${VER} | sed -r 's/-.*//')
 REPVER=$(echo ${VER} | sed -r 's/[^-]*-//;s/-.*//')
 HASHVER=$(echo ${VER} | sed -r 's/.*-//')

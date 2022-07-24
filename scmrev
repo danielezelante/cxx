@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-A=$(git describe --tags --long --match 'v*' | sed -r 's/-g.*//')
+A=$(git describe --tags --long --match 'v*' 2>/dev/null | sed -r 's/-g.*//')
 if [[ -n "$A" ]] ; then
     N=$(echo "$A" | sed -r 's/^.*-//')
     if [[ $N -eq 0 ]] ; then
@@ -9,7 +9,7 @@ if [[ -n "$A" ]] ; then
     fi
 fi
 
-A=$(git describe --tags --long --match 'b*' | sed -r 's/-g/+g/;s/^b//')
+A=$(git describe --tags --long --match 'b*' 2>/dev/null | sed -r 's/-g/+g/;s/^b//')
 if [[ -n "$A" ]] ; then
     echo "$A"
     exit 0

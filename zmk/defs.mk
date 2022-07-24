@@ -116,10 +116,10 @@ TIMEID := $(strip $(shell date -u +%Y_%m_%d_%H_%M_%S))
 OSTYPE := $(shell uname | sed 's/-.*$$//')
 MACHINE := $(shell $(C_CC) $(COMMONFLAGS) $(CFLAGS) $(ZMK_CFLAGS) -dumpmachine)
 
-VER ?= $(shell ../scmrev.sh)
+VER ?= $(shell ../scmrev)
 FIXVER ?= $(shell echo $(VER) | sed -r 's/-.*//')
-REPVER ?= $(shell echo $(VER) | sed -r 's/[^-]*-//;s/-.*//')
-HASHVER ?= $(shell echo $(VER) | sed -r 's/.*-//')
+REPVER ?= $(shell echo $(VER) | sed -r 's/[^-]*-//;s/\+.*//')
+HASHVER ?= $(shell echo $(VER) | sed -r 's/.*\+//')
 
 
 
