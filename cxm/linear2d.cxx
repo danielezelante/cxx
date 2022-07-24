@@ -681,7 +681,7 @@ double dist2(const Polygon2D & a, const Polygon2D & b)
     const size_t na = va.size();
     const size_t nb = vb.size();
 
-    double dist = std::numeric_limits<double>::max();
+    double d = std::numeric_limits<double>::max();
 
     LOOP(ia, na) LOOP(ib, nb)
     {
@@ -696,11 +696,11 @@ double dist2(const Polygon2D & a, const Polygon2D & b)
         if (q2 <= 0.0)
             return 0.0;
 
-        dist = std::min(dist, q1);
-        dist = std::min(dist, q2);
+        d = std::min(dist, q1);
+        d = std::min(dist, q2);
     }
 
-    return dist;
+    return d;
 }
 
 bool collide(const Polygon2D & a, const Polygon2D & b)
