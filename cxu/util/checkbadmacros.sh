@@ -2,7 +2,7 @@
 # YAL zeldan
 
 cd ..
-FILES=$(ls *.hxx | sed -r 's/defs.hxx//g')
+FILES=$(find . -name '*.hxx' | sed -r 's/defs.hxx//g')
 REGEXP='(THROW|ERRCALL|TRACE|ASSERT|VERIFY|TODO|NDEBUG)'
 grep -E $REGEXP $FILES
 cd $OLDPWD
