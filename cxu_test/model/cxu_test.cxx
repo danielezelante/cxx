@@ -6,5 +6,5 @@ No copyright because it is shorter than 10 lines.
 
 #include "cxu_test.hxx"
 
-CXU_IMPLEMENT_LIBINFO("zeldan.net")
+CXU_IMPLEMENT_LIBINFO("zetasys.net")
 

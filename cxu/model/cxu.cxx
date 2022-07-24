@@ -12,6 +12,6 @@ std::vector<LibInfo> LibInfo::_list;
 
 CXU_NS_END
 
-CXU_IMPLEMENT_LIBINFO("zeldan.net");
+CXU_IMPLEMENT_LIBINFO("zetasys.net");
 
 //.

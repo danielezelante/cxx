@@ -1,5 +1,5 @@
 /*
-Copyright (C)  2015  Daniele Zelante  <zeldan@zeldan.net>
+Copyright (C)  2015  Daniele Zelante  <zeldan@zetasys.net>
 
 This file is part of cxu.
 

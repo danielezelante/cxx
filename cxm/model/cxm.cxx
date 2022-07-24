@@ -15,6 +15,6 @@ CXM_NS_BEGIN
 
 CXM_NS_END
 
-CXU_IMPLEMENT_LIBINFO("zeldan.net");
+CXU_IMPLEMENT_LIBINFO("zetasys.net");
 
 //.
