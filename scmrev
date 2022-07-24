@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-set -x
-
 A=$(git describe --tags --long --match 'v*' 2>/dev/null | sed -r 's/-g.*//')
 if [[ -n "$A" ]] ; then
     N=$(echo "$A" | sed -r 's/^.*-//')
@@ -16,6 +14,8 @@ if [[ -n "$A" ]] ; then
     echo "$A"
     exit 0
 fi
+
+echo "0.0.0-0+@"
 
 exit 1
 #.
