@@ -1,0 +1,9 @@
+#ifndef H_66EDFD69_701E_4568_9D6E_251C73C60D48
+#define H_66EDFD69_701E_4568_9D6E_251C73C60D48
+
+#include <cxu/cxu.hxx>
+
+CXU_DECLARE_LIBINFO(cxu_test);
+
+
+#endif

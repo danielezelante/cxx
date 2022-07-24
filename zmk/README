@@ -1,0 +1,16 @@
+@ YAL zeldan
+
+zmk is a build framework based on GNU/make
+
+
+
+Usage notes :
+
+Directory "template" contains usage examples.
+
+
+Environment variables CFLAGS LDFLAGS end similar should not be modified in Makefile, because this file is recursively preocessed to manage dependecies.
+
+
+
+#.

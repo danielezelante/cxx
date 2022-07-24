@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+fatal()
+{
+	echo "$1"
+	exit 1
+}
+
+if [[ -z "$1" ]] ; then
+    git describe --tags --long --match 'b*' | sed -s 's/-.*//'
+else
+    [[ -n $(git status --porcelain) ]] && fatal "Cannot release with uncommited changes."
+    git tag "b$1" || fatal 'git tag failed'
+    git push origin "b$1" || fatal 'git push failed'
+fi
+#.
+

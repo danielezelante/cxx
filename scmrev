@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+A=$(git describe --tags --long --match 'v*' | sed -r 's/-g.*//')
+if [[ -n "$A" ]] ; then
+    N=$(echo "$A" | sed -r 's/^.*-//')
+    if [[ $N -eq 0 ]] ; then
+        echo "$A" | sed -r 's/-.*//;s/^v//'
+        exit 0
+    fi
+fi
+
+A=$(git describe --tags --long --match 'b*' | sed -r 's/-g/+g/;s/^b//')
+if [[ -n "$A" ]] ; then
+    echo "$A"
+    exit 0
+fi
+
+exit 1
+#.
