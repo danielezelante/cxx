@@ -23,9 +23,9 @@ using namespace cxu;
 
 CXM_NS_BEGIN
 
-        //------------- Vector2D ---------------------------------
+//------------- Vector2D ---------------------------------
 
-        const Vector2D Vector2D::O = Vector2D(0, 0);
+const Vector2D Vector2D::O = Vector2D(0, 0);
 
 Vector2D::Vector2D(const Point2D & p) : _x(p.x()), _y(p.y())
 {
@@ -729,7 +729,7 @@ bool collide(const Polygon2D & a, const Polygon2D & b)
 
 //-------------ConvexHullAlgorithm--------------
 
-class ConvexHull_Sort : public std::binary_function<const std::pair<Point2D, size_t>&, const std::pair<Point2D, size_t>&, bool>
+class ConvexHull_Sort 
 {
 public:
 
@@ -747,8 +747,7 @@ public:
     }
 
 protected:
-    Point2D _p0;
-
+    const Point2D _p0;
 };
 
 std::vector<Point2D> convexHull(const std::vector<Point2D> & in, std::set<size_t> * used)
