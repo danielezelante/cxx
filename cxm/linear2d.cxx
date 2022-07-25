@@ -696,8 +696,7 @@ double dist2(const Polygon2D & a, const Polygon2D & b)
         if (q2 <= 0.0)
             return 0.0;
 
-        d = std::min(dist, q1);
-        d = std::min(dist, q2);
+        d = std::min(d, std::min(q1, q2));
     }
 
     return d;
