@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 rpmdev-setuptree
 
@@ -8,12 +8,12 @@ REPVER=$(echo ${VER} | sed -r 's/[^-]*-//;s/-.*//')
 HASHVER=$(echo ${VER} | sed -r 's/.*-//')
 
 
-readonly a=`mktemp`
+readonly a=$(mktemp)
 make DISTFILENAMEFILE="$a" dist
 cp "../$(<$a)" "$HOME/rpmbuild/SOURCES"
 rm "$a"
 
-readonly a=`mktemp`
+readonly a=$(mktemp)
 make -C '../zmk' DISTFILENAMEFILE="$a" dist
 cp "../$(<$a)" "$HOME/rpmbuild/SOURCES"
 rm "$a"

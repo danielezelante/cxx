@@ -805,10 +805,10 @@ double Solid3D::area() const
 bool Solid3D::co(const Point3D & p) const
 {
     const std::vector<Triangle3D> & v = faces();
-    double angle = 0;
+    double a = 0;
     for (auto const & it : v)
-        angle += solidAngle(Versor3D(p - it.a()), Versor3D(p - it.b()), Versor3D(p - it.c()));
-    return (angle > 2 * M_PI);
+        a += solidAngle(Versor3D(p - it.a()), Versor3D(p - it.b()), Versor3D(p - it.c()));
+    return a > 2 * M_PI;
 }
 
 void Solid3D::_Serialization_serialize(BOStorage &s) const
