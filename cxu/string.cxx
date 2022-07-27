@@ -584,15 +584,12 @@ std::string Format::str() const
 
     if (pos != _type.size())
     {
-        char myerr[256];
-        const std::string qfrm = cxu::quote(qfrm);
-        sprintf(
-                myerr,
-                "in %s: tag_count = %zd, data_size = %zu",
-                qfrm.c_str(),
-                pos,
-                _type.size()
-                );
+        const auto myerr = xsprintf(
+            "in %s: tag_count = %zd, data_size = %zu",
+            cxu::quote(frm),
+            pos,
+            _type.size()
+        );
         CXU_THROWINTERFACEEXCEPTION(myerr);
     }
 
